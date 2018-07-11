@@ -97,3 +97,11 @@ img {
 .lt_common_top.active {
   padding-left: 0;
 }
+.ech_l {
+  width: 45%;
+  height: 400px;
+}
+.ech_r {
+  width: 45%;
+  height: 400px;
+}

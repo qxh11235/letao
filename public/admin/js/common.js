@@ -5,7 +5,9 @@ $(function(){
     NProgress.start();//开启进度条
   })
   $(document).ajaxStop(function(){
+   
     NProgress.done();//guangbi进度条
+   
   })
   //点击显示隐藏侧边栏
   $('.icon_aside').on('click',function(){
@@ -18,6 +20,11 @@ $(function(){
   })
   //点击退出;
   $('.icon_logout').on("click",function(){
+    $('#myModal').modal('show')
+   
+  })
+  //点击模态框退出
+  $('.btn_logout').on("click",function(){
     $.ajax({
       url:"/employee/employeeLogout",
       success:function(info){
@@ -27,6 +34,7 @@ $(function(){
       }
     })
   })
+
   
 
 

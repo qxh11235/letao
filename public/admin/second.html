@@ -11,6 +11,7 @@
   <link rel="stylesheet" href="./lib/nprogress/nprogress.css">
   <link rel="stylesheet" href="./css/common.css">
 </head>
+<body>
 <!-- 侧边栏 -->
 <div class="lt_aside">
   <div class="lt_brand">
@@ -71,8 +72,28 @@
 <div class="lt_content">
 
 </div>
+<div class="modal fade" id="myModal">
+    <div class="modal-dialog modal-sm">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+          <h4 class="modal-title">温馨提示</h4>
+        </div>
+        <div class="modal-body">
+          <p>是否退出登入</p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+          <button type="button" class="btn btn-primary btn_logout">退出</button>
+        </div>
+      </div>
+      <!-- /.modal-content -->
+    </div>
+    <!-- /.modal-dialog -->
+  </div>
 
-<body>
 
   <script src="./lib/jquery/jquery.min.js"></script>
   <script src="./lib/bootstrap/js/bootstrap.min.js"></script>

@@ -1,6 +1,9 @@
 html,body{
   height: 100%;
 }
+body{
+  padding-left: 180px;
+}
 a{
   display: block;
   color: initial;
@@ -83,7 +86,7 @@ img{
 }
 .lt_common_top{
   transition: all 1s;
-  padding-left: 180px;
+  
   .lt_m_top{
 
     padding: 0 15px;
@@ -102,6 +105,7 @@ img{
 .lt_common_top.active{
   padding-left: 0;
 }
+//首页图表;
 .ech_l{
   width: 45%;
   height: 400px;
@@ -111,4 +115,18 @@ img{
 width: 45%;
 height: 400px;
 // border: 1px solid #000;
+}
+//用户页;
+.lt_content{
+  .table.table-bordered{
+    tr{
+      td{
+        vertical-align: middle;
+      }
+      th{
+        text-align: center;
+      }
+    }
+    
+  }
 }

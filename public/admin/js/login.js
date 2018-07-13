@@ -52,9 +52,9 @@ $('form').bootstrapValidator({
 });
 $('[type="reset"]').on("click", function () {
   var validator = $("form").data('bootstrapValidator'); //获取表单校验实例
-  validator.resetForm(); //重置表单，并且会隐藏所有的错误提示和图标
+  validator.resetForm(true); //重置表单，并且会隐藏所有的错误提示和图标
 })
-
+//表单校验成功事件;
 $("form").on('success.form.bv', function (e) {
   e.preventDefault();
   //使用ajax提交逻辑

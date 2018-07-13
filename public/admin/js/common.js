@@ -12,7 +12,7 @@ $(function(){
   //点击显示隐藏侧边栏
   $('.icon_aside').on('click',function(){
     $('.lt_aside').toggleClass('active');
-    $('.lt_common_top').toggleClass('active');
+    $('body').toggleClass('active');
   })
   //点击分类管理 显示二级菜单;
   $('.secand').prev().on("click",function(){

@@ -4,6 +4,7 @@ body {
 }
 body {
   padding-left: 180px;
+  transition: all 1s;
 }
 a {
   display: block;
@@ -14,6 +15,9 @@ a:visited,
 a:hover,
 a:active {
   text-decoration: none;
+}
+.mb_20 {
+  margin-bottom: 20px;
 }
 ul {
   margin: 0;
@@ -96,7 +100,7 @@ img {
 .breadcrumb {
   margin: 20px 0;
 }
-.lt_common_top.active {
+body.active {
   padding-left: 0;
 }
 .ech_l {
@@ -109,6 +113,7 @@ img {
 }
 .lt_content .table.table-bordered tr td {
   vertical-align: middle;
+  text-align: center;
 }
 .lt_content .table.table-bordered tr th {
   text-align: center;

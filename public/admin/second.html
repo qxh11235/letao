@@ -11,68 +11,88 @@
   <link rel="stylesheet" href="./lib/nprogress/nprogress.css">
   <link rel="stylesheet" href="./css/common.css">
 </head>
+
 <body>
-<!-- 侧边栏 -->
-<div class="lt_aside">
-  <div class="lt_brand">
-    <a href="index.html">乐淘网</a>
-  </div>
-  <div class="lt_user">
-    <img src="./images/IMG_0477.JPG" alt="">
-    <p>管理员</p>
-  </div>
-  <div class="lt_menu">
-    <ul>
-      <li>
-        <a href="user.html">
-          <span class="glyphicon glyphicon-user"></span>
-          <span>用户管理</span>
-        </a>
-      </li>
-      <li>
-        <a href="#">
-          <span class="glyphicon glyphicon-list"></span>
-          <span>分类管理</span>
-        </a>
-        <div class="secand" style="display: block">
-          <a href="first.html">
-            一级分类
+  <!-- 侧边栏 -->
+  <div class="lt_aside">
+    <div class="lt_brand">
+      <a href="index.html">乐淘网</a>
+    </div>
+    <div class="lt_user">
+      <img src="./images/IMG_0477.JPG" alt="">
+      <p>管理员</p>
+    </div>
+    <div class="lt_menu">
+      <ul>
+        <li>
+          <a href="user.html">
+            <span class="glyphicon glyphicon-user"></span>
+            <span>用户管理</span>
           </a>
-          <a class="active" href="second.html">
-            二级分类
+        </li>
+        <li>
+          <a href="#">
+            <span class="glyphicon glyphicon-list"></span>
+            <span>分类管理</span>
           </a>
-        </div>
-      </li>
+          <div class="secand" style="display: block">
+            <a href="first.html">
+              一级分类
+            </a>
+            <a class="active" href="second.html">
+              二级分类
+            </a>
+          </div>
+        </li>
+        <li>
+          <a href="product.html">
+            <span class="glyphicon glyphicon-tags"></span>
+            <span>商品管理</span>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <!-- 主体公共布局 -->
+  <div class="lt_common_top">
+    <div class="lt_m_top clearfix">
+      <a class="icon_aside pull-left" href="javascript:;">
+        <span class="glyphicon glyphicon-align-justify"></span>
+      </a>
+      <a class="icon_logout pull-right" href="javascript:;">
+        <span class="glyphicon glyphicon-log-out"></span>
+      </a>
+    </div>
+    <ol class="breadcrumb">
       <li>
-        <a href="product.html">
-          <span class="glyphicon glyphicon-tags"></span>
-          <span>商品管理</span>
-        </a>
+        <a href="#">管理系统</a>
       </li>
-    </ul>
-  </div>
-</div>
-<!-- 主体公共布局 -->
-<div class="lt_common_top">
-  <div class="lt_m_top clearfix">
-    <a class="icon_aside pull-left" href="javascript:;">
-      <span class="glyphicon glyphicon-align-justify"></span>
-    </a>
-    <a class="icon_logout pull-right" href="javascript:;">
-      <span class="glyphicon glyphicon-log-out"></span>
-    </a>
-  </div>
-  <ol class="breadcrumb">
-    <li><a href="#">管理系统</a></li>
-   
-    <li class="active">二级分类</li>
-  </ol>
 
-</div>
-<div class="lt_content">
+      <li class="active">二级分类</li>
+    </ol>
+    <div class="lt_content container-fluid">
+      <button class="btn btn-default btn_add mb_20 container-fluid">添加分类</button>
+      <table class="table-bordered table table-striped">
+        <thead>
+          <tr>
+            <th>序号</th>
+            <th>一级分类</th>
+            <th>二级分类</th>
+            <th>二级分类logo</th>
 
-</div>
-<div class="modal fade" id="myModal">
+          </tr>
+        </thead>
+        <tbody>
+          <!-- 模板渲染 -->
+        </tbody>
+      </table>
+      <div style="text-align:right;">
+        <ul id="useroption"></ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal fade" id="myModal">
     <div class="modal-dialog modal-sm">
       <div class="modal-content">
         <div class="modal-header">
@@ -93,14 +113,88 @@
     </div>
     <!-- /.modal-dialog -->
   </div>
+  <div class="modal fade" id="addModal">
+    <div class="modal-dialog modal-sm">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+          <h4 class="modal-title">添加分类</h4>
+        </div>
+        <form>
+          
+          <input type="hidden" name="hot" value="1">
+       
+          <div class="modal-body">
+            <!-- 要验证的表单元素都要放入一个由form-group的类的盒子中 -->
+            <div class="form-group">
+              <input type="hidden" name="categoryId">
+              <div class="dropdown">
+                <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown">
+                  <span class="dropText">请选择一级分类</span>
+                  <span class="caret"></span>
+                </button>
+                <ul class="dropdown-menu">
+                  <!-- 模板渲染 -->
 
+                </ul>
+              </div>
+            </div>
+            <div class="form-group">
+
+              <input type="text" class="form-control" name="brandName" id="brandName" placeholder="请输入二级分类名称">
+            </div>
+            <div class="form-group">
+              <label class="btn btn-default mb_20" for="file">上传图片</label>
+              <input type="hidden" name="brandLogo" >
+              <input type="file" id="file" name="pic1" data-url="/category/addSecondCategoryPic" class="hidden">
+              <img class="upimg" src="./images/none.png" width="100" height="100" alt="">
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+            <button type="submit" class="btn btn-primary btn_ok">确定</button>
+          </div>
+        </form>
+      </div>
+      <!-- /.modal-content -->
+    </div>
+    <!-- /.modal-dialog -->
+  </div>
 
   <script src="./lib/jquery/jquery.min.js"></script>
+
   <script src="./lib/bootstrap/js/bootstrap.min.js"></script>
   <script src="./lib/bootstrap-validator/js/bootstrapValidator.min.js"></script>
+    <!-- 引入图片上传的插件两个都是 -->
+    <script src="./lib/jquery-fileupload/jquery.ui.widget.js"></script>
+    <script src="./lib/jquery-fileupload/jquery.fileupload.js"></script>
+  <script src="./lib/bootstrap-paginator/bootstrap-paginator.min.js"></script>
   <script src="./lib/nprogress/nprogress.js"></script>
-
+  <script src="./lib/artTemplate/template-web.js"></script>
   <script src="./js/common.js"></script>
+  <script src="./js/second.js"></script>
+  <script type="text/html" id="tpl">
+    {{ each rows v i }}
+    <tr>
+      <td>{{(page-1)*size+i+1}}</td>
+      <td>{{ v.categoryName}}</td>
+      <td>{{v.brandName}}</td>
+      <td>
+        <img width="50" height="50" src="{{v.brandLogo}}" alt="" style="margin: 0 auto">
+      </td>
+    </tr>
+    {{ /each }}
+  </script>
+  <script type="text/html" id="tmp">
+    {{ each rows v i }}
+    <li>
+      <a data-id="{{ v.id }}" href="#">{{v.categoryName}}</a>
+    </li>
+    {{ /each }}
+  </script>
+
 
 
 </body>

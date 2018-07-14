@@ -118,3 +118,6 @@ body.active {
 .lt_content .table.table-bordered tr th {
   text-align: center;
 }
+.img_box img {
+  display: inline-block;
+}

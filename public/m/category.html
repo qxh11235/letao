@@ -31,22 +31,7 @@
           <div class="mui-scroll">
             <!--这里放置真实显示的DOM内容-->
             <ul>
-              <li><a href="javascript:;">111</a></li>
-              <li><a href="javascript:;">111</a></li>
-              <li><a href="javascript:;">111</a></li>
-              <li><a href="javascript:;">111</a></li>
-              <li><a href="javascript:;">111</a></li>
-              <li><a href="javascript:;">111</a></li>
-              <li><a href="javascript:;">111</a></li>
-              <li><a href="javascript:;">111</a></li>
-              <li><a href="javascript:;">111</a></li>
-              <li><a href="javascript:;">111</a></li>
-              <li><a href="javascript:;">111</a></li>
-              <li><a href="javascript:;">111</a></li>
-              <li><a href="javascript:;">111</a></li>
-              <li><a href="javascript:;">111</a></li>
-              <li><a href="javascript:;">111</a></li>
-              <li><a href="javascript:;">111</a></li>
+            <!--  模板渲染-->
             </ul>
           </div>
         </div>
@@ -56,20 +41,8 @@
           <div class="mui-scroll">
            
             <ul>
-              <li><a href="javascript:;"><img src="./images/brand1.png" alt=""></a></li>
-              <li><a href="javascript:;"><img src="./images/brand2.png" alt=""></a></li>
-              <li><a href="javascript:;"><img src="./images/brand3.png" alt=""></a></li>
-              <li><a href="javascript:;"><img src="./images/brand4.png" alt=""></a></li>
-              <li><a href="javascript:;"><img src="./images/brand5.png" alt=""></a></li>
-              <li><a href="javascript:;"><img src="./images/brand6.png" alt=""></a></li>
-              <li><a href="javascript:;"><img src="./images/brand1.png" alt=""></a></li>
-              <li><a href="javascript:;"><img src="./images/brand1.png" alt=""></a></li>
-              <li><a href="javascript:;"><img src="./images/brand1.png" alt=""></a></li>
-              <li><a href="javascript:;"><img src="./images/brand1.png" alt=""></a></li>
-              <li><a href="javascript:;"><img src="./images/brand1.png" alt=""></a></li>
-              <li><a href="javascript:;"><img src="./images/brand1.png" alt=""></a></li>
-              <li><a href="javascript:;"><img src="./images/brand1.png" alt=""></a></li>
-              <li><a href="javascript:;"><img src="./images/brand1.png" alt=""></a></li>
+             
+              <!-- 模板渲染 -->
             </ul>
           </div>
         </div>
@@ -109,7 +82,20 @@
   <script src="./lib/mui/js/mui.min.js"></script>
   <script src="./lib/artTemplate/template-web.js"></script>
   <script src="./js/common.js"></script>
-  <script src="./js/category.js"></script>
+	<script src="./js/category.js"></script>
+	<script type="text/html" id="tpl">
+		{{ each rows v i }}
+		<li class="{{i==0?'active':''}}" data-id="{{v.id}}"><a href="javascript:;">{{ v.categoryName}}</a></li>
+		{{ /each }}
+	</script>
+	<script type="text/html" id="tmp">
+		{{ if rows.length===0}}
+			<p>当前分类没有商品</p>
+		{{ /if}}
+		{{each rows v i }}
+			<li ><a href="javascript:;"><img src="{{v.brandLogo}}" alt=""><p>{{v.brandName}}</p></a></li>
+		{{ /each}}
+	</script>
 </body>
 
 

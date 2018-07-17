@@ -23,9 +23,9 @@ $(function () {
 			arr.unshift(val);
 			setLocal(arr);
 
-			render();
+			// render();
 			//跳转商品页;
-			location.href="searchList.html?key="+val;
+			location.href="searchList.html?'key'="+val;
 
 		}
 	

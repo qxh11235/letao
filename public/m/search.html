@@ -17,7 +17,7 @@
 <body>
 	<div class="lt_container">
 		<header>
-			<a class="hd_left" href="index.html">
+			<a class="hd_left" href="javascript:;">
 				<span class="mui-icon mui-icon-back"></span>
 			</a>
 			<h4>搜索中心</h4>
@@ -88,7 +88,7 @@
 			<!-- 模板渲染 -->
 			{{ each list v i }}
 			<li>
-				<a class="mui-pull-left" href="searchList.html?{{v}}">{{v}}</a>
+				<a class="mui-pull-left" href="searchList.html?key={{v}}">{{v}}</a>
 				<span data-index="{{ i }}" class="mui-icon mui-icon-closeempty mui-pull-right btn_del"></span>
 			</li>
 			{{ /each}}

@@ -1,0 +1,56 @@
+.paddingBorder {
+  padding: 10px;
+  border-top: 1px solid #ccc;
+}
+.lt_main h4 {
+  padding: 10px;
+  border-top: 1px solid #ccc;
+  line-height: 24px;
+}
+.proPrace {
+  padding: 10px;
+  border-top: 1px solid #ccc;
+}
+.proPrace span {
+  color: red;
+  font-size: 17px;
+}
+.proPrace del {
+  color: #ccc;
+  font-size: 12px;
+}
+.proSize {
+  padding: 10px;
+  border-top: 1px solid #ccc;
+  line-height: 33px;
+}
+.proSize span {
+  border: 1px solid #ccc;
+  padding: 3px;
+  background-color: #eef;
+}
+.proNum {
+  padding: 10px;
+  border-top: 1px solid #ccc;
+}
+.proNum span {
+  color: #666;
+  font-size: 12px;
+}
+.proDesc {
+  padding: 10px;
+  border-top: 1px solid #ccc;
+}
+.lt_cart {
+  border-top: 1px solid red;
+  background-color: #eee;
+  height: 55px;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: 10px;
+}
+.lt_cart a {
+  line-height: 35px;
+}
